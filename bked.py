@@ -1,6 +1,5 @@
-from flask import render_template, jsonify, request, Response
+from flask import Flask, Response
 import Adafruit_DHT
-from flask import Flask
 import json
 
 app = Flask(__name__)

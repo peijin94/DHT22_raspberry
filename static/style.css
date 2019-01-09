@@ -1,21 +1,27 @@
 body {
-    background-color:#999;
+    background-color:#555;
     font-size: 14px;
     color: #fff;
   }
   
   ul {
-    position:fixed;
-    width:100%;
-    margin-top:25px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%); /* IE 9 */
+    -webkit-transform: translate(-50%, -50%); /* Chrome, Safari, Opera */	  
+    
+    vertical-align: middle;
     list-style:none;
+    align-self: center;
   }
 
   li {
-    width:70.4333%;
-    text-align:center;  
+    text-align:left;  
   }
   span {
-    font-size: 10em;
+    font-size: 12em;
     font-weight:bold;
+    font-family: 'Lucida Sans';
   }

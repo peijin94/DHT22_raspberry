@@ -26,8 +26,8 @@
             $.ajax({
                 url: '/api/gettmp',
                 success: function (data) {
-                    document.getElementById('temp').innerHTML = data[0];
-                    document.getElementById('hum').innerHTML = data[1];
+                    document.getElementById('temp').innerHTML = data[0] + "°C";
+                    document.getElementById('hum').innerHTML = data[1] + "%";
                 }
             });
         }
@@ -43,19 +43,19 @@
 
  </head>
  <body onload="startTime()">
-        <ul class="countdown">
+        <ul>
                 <li>
                         <span><i class="fa fa-clock-o"></i>&nbsp;&nbsp;</span><span id='txt'></span>
                 </li>
                
                 
                 <li>
-                        <span><i class="fa fa-thermometer-half">&nbsp;&nbsp;</i></span><span id='temp'>temperature</span>
+                        <span><i class="fa fa-thermometer-half"></i>&nbsp;</span><span id='temp'>temperature</span>
                 </li>
 
                                 
                 <li>
-                        <span><i class="fa fa-tint">&nbsp;&nbsp;</i></span><span id='hum'>humidity</span>
+                        <span><i class="fa fa-tint"></i>&nbsp;</span><span id='hum'>humidity</span>
                 </li>
         </ul>
   
