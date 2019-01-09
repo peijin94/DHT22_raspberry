@@ -1,0 +1,64 @@
+
+<html>
+ <head>
+  <title>Nothing</title>
+  <link rel="stylesheet" type="text/css" href="/static/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script>
+        function startTime() {
+          var today = new Date();
+          var h = today.getHours();
+          var m = today.getMinutes();
+          var s = today.getSeconds();
+          m = checkTime(m);
+          s = checkTime(s);
+          document.getElementById('txt').innerHTML =
+          h + ":" + m + ":" + s;
+          var t = setTimeout(startTime, 5);
+        }
+        function checkTime(i) {
+          if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+          return i;
+        }
+
+        
+        function update_tmp(){
+            $.ajax({
+                url: '/api/gettmp',
+                success: function (data) {
+                    document.getElementById('temp').innerHTML = data[0];
+                    document.getElementById('hum').innerHTML = data[1];
+                }
+            });
+        }
+
+        window.setInterval(function(){
+            update_tmp();
+        }, 5000);
+        
+    </script>
+
+
+<script src="/static/update.js"></script>
+
+ </head>
+ <body onload="startTime()">
+        <ul class="countdown">
+                <li>
+                        <span><i class="fa fa-clock-o"></i>&nbsp;&nbsp;</span><span id='txt'></span>
+                </li>
+               
+                
+                <li>
+                        <span><i class="fa fa-thermometer-half">&nbsp;&nbsp;</i></span><span id='temp'>temperature</span>
+                </li>
+
+                                
+                <li>
+                        <span><i class="fa fa-tint">&nbsp;&nbsp;</i></span><span id='hum'>humidity</span>
+                </li>
+        </ul>
+  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+ </body>
+</html>
