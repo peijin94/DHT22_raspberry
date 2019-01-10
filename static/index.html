@@ -14,7 +14,7 @@
           s = checkTime(s);
           document.getElementById('txt').innerHTML =
           h + ":" + m + ":" + s;
-          var t = setTimeout(startTime, 5000);
+          var t = setTimeout(startTime, 1000);
         }
         function checkTime(i) {
           if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
@@ -34,7 +34,7 @@
 
         window.setInterval(function(){
             update_tmp();
-        }, 5000);
+        }, 2000);
         
     </script>
 
